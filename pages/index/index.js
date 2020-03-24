@@ -19,7 +19,7 @@ import { pageSize, url } from './../../config/default'
 import AcntMessage from './../../components/hooks/acntMessage'
 import Createarticle from './../../components/hooks/createarticle'
 import Noreply from './../../components/hooks/noreply'
-import Scorerank from './../../components/hooks/scorerank'
+import Scorerank from './../../components/hooks/scoreRank'
 import Community from './../../components/hooks/community'
 import Introduce from './../../components/hooks/introduce'
 
