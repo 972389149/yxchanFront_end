@@ -194,7 +194,7 @@ const Index = props => {
 }
 
 export async function getServerSideProps(context) {
-  // 获取topic列表
+  // 获取topic列表 
   const topicData = await FetchGet(`topic/getAllTopics`, {})
     .then(val => {
       return {
