@@ -18,9 +18,9 @@ import { pageSize, url } from './../../config/default'
 
 import AcntMessage from './../../components/hooks/acntMessage'
 import Createarticle from './../../components/hooks/createarticle'
-import Noreply from './../../components/hooks/Noreply'
-import Scorerank from './../../components/hooks/Scorerank'
-import Community from './../../components/hooks/Community'
+import Noreply from './../../components/hooks/noreply'
+import Scorerank from './../../components/hooks/scorerank'
+import Community from './../../components/hooks/community'
 import Introduce from './../../components/hooks/introduce'
 
 const IconText = ({ type, text }) => {
@@ -57,20 +57,7 @@ const IconText = ({ type, text }) => {
 }
 
 const Index = props => {
-  // let Nemetric;
-  // if (window === undefined) {
-  //   console.log('123');
-  //   Nemetric = require('nemetric')
-  // }
-  // console.log(Nemetric)
-  // console.log(window);
-  // useEffect(() => {
-  //   const nemetric = new Nemetric({
-  //     firstContentfulPaint: true,
-  //     firstInputDelay: true,
-  //   })
-  //   nemetric.start('AppAfterPaint');
-  // }, [])
+
   const [current, changeCurrent] = useState(props.topicKey);
   const handleClick = e => {
     changeCurrent(e.key)

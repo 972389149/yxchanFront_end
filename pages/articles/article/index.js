@@ -14,8 +14,8 @@ import Router from 'next/router'
 import Style from './Article.module.scss'
 import { getYMDHMS, FetchPost, FetchGet } from './../../../tools'
 import AcntMessage from './../../../components/hooks/acntMessage'
-import Noreply from './../../../components/hooks/Noreply'
-import Community from './../../../components/hooks/Community'
+import Noreply from './../../../components/hooks/noreply'
+import Community from './../../../components/hooks/community'
 
 const Editor = ({ onChange, onSubmit, submitting, value }) => (
   <div>
