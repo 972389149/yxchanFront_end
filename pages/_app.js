@@ -12,6 +12,6 @@ const YxApp = ({ Component, pageProps, store }) => {
       <Layout Component = {Component} pageProps = {pageProps} />
     </Provider>
   )
-}
+} 
 
 export default withRedux(configureStore)(withReduxSaga(YxApp));
