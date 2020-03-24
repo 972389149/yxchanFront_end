@@ -1,0 +1,80 @@
+.create_inner {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #e1e1e1;
+  .create_info_1 {
+    width: 100%;
+    // height: 900px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title {
+      width: 100%;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      background-color: #f6f6f6;
+      padding: 5px 10px 5px 10px;
+      color: #51585c;
+      font-size: 14px;
+    }
+    .topicInput {
+      height: 40px;
+      margin-top: 10px;
+    }
+    .titleInput {
+      height: 40px;
+    }
+    .descInput {
+      height: 40px;
+    }
+    .editorInput {
+      height: 600px;
+      width: 94%;
+      margin: 10px;
+    }
+    .sections {
+      width: 94%;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .subTitle {
+        width: 65px;
+        text-align: right;
+        margin: 0px 10px;
+        padding: 0px;
+      }
+      .subInput {
+        width: 325px;
+      }
+      button {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  span {
+    overflow: visible;
+  }
+  .create_info_2 {
+    width: 290px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .create_warn {
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .createForbid {
+    width: 100%;
+    background-color: #fff;
+  }
+}

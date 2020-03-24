@@ -1,0 +1,45 @@
+Arguments: 
+  E:\学习\前端学习\New Folder\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add --exact react react-dom next --cwd E:\GraduationProject\front_end\yxchan1\yxchan
+
+PATH: 
+  C:\Users\Administrator\bin;F:\git\Git\mingw64\bin;F:\git\Git\usr\local\bin;F:\git\Git\usr\bin;F:\git\Git\usr\bin;F:\git\Git\mingw64\bin;F:\git\Git\usr\bin;C:\Users\Administrator\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0;%JAVA_HOME%\bin;%JAVA_HOME%\jre\BIN;E:\学习\前端学习\New Folder;E:\Py;hon;E:\Python\Scripts;E:\MongoDB\bin;C:\Users\Administrator\AppData\Roaming\npm;F:\git\Git\cmd;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;D:\webStrom\WebStorm 2018.3.4\bin;E:\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\npm;E:\huya\Fiddler;F:\git\Git\usr\bin\vendor_perl;F:\git\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.0
+
+Node version: 
+  13.7.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://nexus.huya.com/repository/npm-public/native-url/-/native-url-0.2.6.tgz: Request failed "404 Not Found"
+      at ResponseError.ExtendableBuiltin (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:696:66)
+      at new ResponseError (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:802:124)
+      at Request.<anonymous> (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:67045:16)
+      at Request.emit (events.js:321:20)
+      at Request.module.exports.Request.onRequestResponse (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141604:10)
+      at ClientRequest.emit (events.js:321:20)
+      at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:602:27)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:116:17)
+      at TLSSocket.socketOnData (_http_client.js:471:22)
+      at TLSSocket.emit (events.js:321:20)
+
+npm manifest: 
+  {
+    "name": "yxchan",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
