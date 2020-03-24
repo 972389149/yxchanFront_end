@@ -26,7 +26,7 @@ const get = (path_, params_) => {
       })
   })
 }
-
+ 
 // 封装post请求
 const post = (path_, params_, isServer, cookies) => {
   return new Promise((resolve, reject) => {
@@ -49,6 +49,7 @@ const post = (path_, params_, isServer, cookies) => {
         }
       })
       .catch(err => {
+        console.log(err);
         reject({
           msg: `服务器异常`,
         });
