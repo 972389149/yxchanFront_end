@@ -79,6 +79,8 @@
         display: flex;
         align-items: center;
         .item_count {
+          min-width: 50px;
+          text-align: center;
           margin: 0px 10px 0px 5px;
           font-size: 10px;
           .item_comment_count {

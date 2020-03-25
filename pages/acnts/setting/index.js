@@ -359,6 +359,7 @@ const Setting = props => {
           acntName = {props.acnt.data.acntName}
           acntScore = {props.acnt.data.acntScore}
           acntSignature = {props.acnt.data.acntSignature}
+          title = {'个人信息'}
         />
         <Createarticle />
         <Community />

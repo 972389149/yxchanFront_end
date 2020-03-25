@@ -467,7 +467,6 @@ export async function getServerSideProps(context) {
         }
       })
       .catch(err => {
-        console.log(err)
         return {
           code: 0,
           msg: '404',
