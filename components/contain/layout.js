@@ -267,6 +267,7 @@ const Layout = props => {
         }
         .public_box {
           width: 100%;
+          min-width: 800px;
           min-height: calc(100vh - 50px - 205px);
         }
         .box_inner {
