@@ -28,6 +28,7 @@ const tab = [
 
 const Layout = props => {
   const [isNet, isNet_] = useState(true);
+  const [status, status_] = useState(props.acnt.status);
   /* 判断网络状态 */
   useEffect(() => {
     FetchGet(`other/checkNet`, {})
@@ -42,9 +43,10 @@ const Layout = props => {
   /* 判断页面是否登录，登录了就初始化状态 */
   const [navList, navList_] = useState(tab)
   useEffect(() => {
-    if (props.acnt.status === 1) return;
+    if (status === 1) return;
     FetchPost(`acnt/getAcntInfo`, {}, false)
       .then(val => {
+        status_(1);
         props.checkIn({
           status: 1,
           data: val.data,
@@ -62,16 +64,17 @@ const Layout = props => {
         ]))
       })
       .catch(err => {
+        status_(0);
         props.checkIn({
           status: 0,
           data: {},
         });
       });
-  }, [])
+  })
 
   useEffect(() => {
     if (props.acnt.status !== 1) {
-      navList_(tab)
+      navList_(tab);
     } else {
       navList_(tab.concat([{
           area: '消息',
@@ -85,7 +88,7 @@ const Layout = props => {
         }
       ]))
     }
-  }, [props.acnt])
+  }, [props.acnt.status])
 
   // 导航点击
   const navClick = navItem => {
@@ -94,6 +97,7 @@ const Layout = props => {
         .then(val => {
           props.loginOut();
           navList_(tab);
+          status_(0);
           message.success(val.msg);
         }).catch(err => {
           message.error(err.msg);
@@ -146,11 +150,11 @@ const Layout = props => {
                 specialComp.indexOf(Component.displayName) !== -1 &&
                 <React.Fragment>
                   {
-                    props.acnt.status === 1 &&
+                    status === 1 &&
                     <Component {...pageProps}/>
                   }
                   {
-                    props.acnt.status !== 1 &&
+                    status !== 1 &&
                     <Authorized {...pageProps}/>
                   }
                 </React.Fragment>
