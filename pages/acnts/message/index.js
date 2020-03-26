@@ -13,20 +13,19 @@ import Community from './../../../components/hooks/community'
 
 const Message = props => {
   
-  useEffect(() => {
-    FetchPost(`acntMessage/getMessage`, {}, false)
-      .then(val => {
-        readL_(val.data.read);
-        unReadL_(val.data.unRead)
-      })
-  }, [])
-
+  // useEffect(() => {
+  //   FetchPost(`acntMessage/getMessage`, {}, false)
+  //     .then(val => {
+  //       readL_(val.data.read);
+  //       unReadL_(val.data.unRead)
+  //     })
+  // }, [])
   const [readCurrent, readCurrent_] = useState(1);
   const [unReadCurrent, unReadCurrent_] = useState(1);
 
-  const [readL, readL_] = useState([]);
+  const [readL, readL_] = useState(props.readL);
   const [showRead, showRead_] = useState([]);
-  const [unReadL, unReadL_] = useState([]);
+  const [unReadL, unReadL_] = useState(props.unReadL);
   const [showunRead, showunRead_] = useState([]);
 
   useEffect(() => {
@@ -240,6 +239,26 @@ const Message = props => {
       </section>
     </div>
   )
+}
+
+export async function getServerSideProps(context) {
+  let cookies = context.req.headers.cookie;
+  const data = await FetchPost(`acntMessage/getMessage`, {}, true, cookies)
+    .then(val => {
+      return val.data;
+    })
+    .catch(err => {
+      return {
+        read: [],
+        unRead: [],
+      }
+    })
+  return {
+    props: {
+      readL: data.read,
+      unReadL: data.unRead,
+    }
+  }
 }
 
 const mapStateToProps = state => {

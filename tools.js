@@ -30,6 +30,7 @@ const get = (path_, params_) => {
 // 封装post请求
 const post = (path_, params_, isServer, cookies) => {
   return new Promise((resolve, reject) => {
+    console.log('测试接受', isServer, cookies)
     axios.post(url + path_, params_, {
       withCredentials: true,
       headers: isServer ? {
