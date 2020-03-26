@@ -151,7 +151,7 @@ const Edit = props => {
         <section className = {Style.edit_warn}>
           <Result
             status = "success"
-            title = "编辑成功, 即将跳转至文章页面!"
+            title = "编辑成功!"
           />
         </section>
       }
