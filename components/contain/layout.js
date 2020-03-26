@@ -70,7 +70,7 @@ const Layout = props => {
           data: {},
         });
       });
-  })
+  }, [])
 
   useEffect(() => {
     if (props.acnt.status !== 1) {
