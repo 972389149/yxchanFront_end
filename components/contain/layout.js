@@ -11,7 +11,6 @@ import { bindActionCreators } from 'redux'
 import { FetchPost, FetchGet } from './../../tools'
 import { loginout, check } from './../../redux/actions'
 import Error_ from './../hooks/error'
-import Authorized from './../../components/hooks/authorized'
 
 const tab = [
   {
@@ -144,26 +143,7 @@ const Layout = props => {
       <section className = 'public_box'>
         <div className = 'box_inner'>
           {
-            isNet &&
-            <React.Fragment>
-              {
-                specialComp.indexOf(Component.displayName) !== -1 &&
-                <React.Fragment>
-                  {
-                    status === 1 &&
-                    <Component {...pageProps}/>
-                  }
-                  {
-                    status !== 1 &&
-                    <Authorized {...pageProps}/>
-                  }
-                </React.Fragment>
-              }
-              {
-                specialComp.indexOf(Component.displayName) === -1 &&
-                <Component {...pageProps}/>
-              }
-            </React.Fragment>
+            isNet &&  <Component {...pageProps}/>
           }
           {
             !isNet && <Error_ />

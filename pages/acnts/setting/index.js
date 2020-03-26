@@ -10,13 +10,14 @@ import { bindActionCreators } from 'redux'
 const { TextArea } = Input
 
 import Style from './Setting.module.scss'
-import { FetchGet, FetchPost } from './../../../tools'
+import { FetchPost } from './../../../tools'
 import { url } from './../../../config/default'
 import AcntMessage from './../../../components/hooks/acntMessage'
 import Community from './../../../components/hooks/community'
 import Hookheader from './../../../components/contain/hookheader'
 import Createarticle from './../../../components/hooks/createarticle'
 import { reset } from './../../../redux/actions'
+import Authorized from './../../../components/hooks/authorized'
 
 const Setting = props => {
 
@@ -183,6 +184,12 @@ const Setting = props => {
         })
       }, 1000)
     });
+  }
+
+  if (props.acnt.status !== 1) {
+    return (
+      <Authorized />
+    )
   }
 
   return (

@@ -12,6 +12,7 @@ import Style from './Create.module.scss'
 import Guild from './../../../components/hooks/guild'
 import Markdown from './../../../components/hooks/markdown'
 import { FetchGet, FetchPost } from './../../../tools'
+import Authorized from './../../../components/hooks/authorized'
 
 const Editor_ = dynamic(import('./../../../components/hooks/editor'), {
   ssr: false
@@ -80,6 +81,12 @@ const Create = props => {
       message.error(err);
       loading_(false)
     })
+  }
+
+  if (props.acnt.status !== 1) {
+    return (
+      <Authorized />
+    )
   }
 
   return (
@@ -157,11 +164,9 @@ const Create = props => {
                   code: true, // 代码块
                   preview: true, // 预览
                   expand: true, // 全屏
-                  /* v0.0.9 */
                   undo: true, // 撤销
                   redo: true, // 重做
                   save: false, // 保存
-                  /* v0.2.3 */
                   subfield: true, // 单双栏模式
                 }} 
               />

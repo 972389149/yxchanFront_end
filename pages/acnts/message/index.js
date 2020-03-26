@@ -10,16 +10,10 @@ import Style from './Message.module.scss'
 import { FetchPost } from './../../../tools'
 import AcntMessage from './../../../components/hooks/acntMessage'
 import Community from './../../../components/hooks/community'
+import Authorized from './../../../components/hooks/authorized'
 
 const Message = props => {
-  
-  // useEffect(() => {
-  //   FetchPost(`acntMessage/getMessage`, {}, false)
-  //     .then(val => {
-  //       readL_(val.data.read);
-  //       unReadL_(val.data.unRead)
-  //     })
-  // }, [])
+
   const [readCurrent, readCurrent_] = useState(1);
   const [unReadCurrent, unReadCurrent_] = useState(1);
 
@@ -116,6 +110,12 @@ const Message = props => {
       )
     }
   }  
+  
+  if (props.acnt.status !== 1) {
+    return (
+      <Authorized />
+    )
+  }
 
   return (
     <div className = {Style.message_inner}>
