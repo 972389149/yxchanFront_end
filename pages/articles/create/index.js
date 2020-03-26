@@ -72,11 +72,6 @@ const Create = props => {
     .then(val => {
       loading_(false);
       hasPub_(true);
-      setTimeout(() => {
-        Router.push({
-          pathname: '/articles/article/' + val.data.articleId,
-        })
-      }, 1000)
     }).catch(err => {
       message.error(err);
       loading_(false)
@@ -179,6 +174,10 @@ const Create = props => {
               >发布文章</Button>
             </section>
           </section>
+          <section className = {Style.create_info_2}>
+            <Markdown />
+            <Guild />
+          </section>
         </React.Fragment>
       }
       {
@@ -190,10 +189,6 @@ const Create = props => {
           />
         </section>
       }
-      <section className = {Style.create_info_2}>
-        <Markdown />
-        <Guild />
-      </section>
     </div>
   )
 }

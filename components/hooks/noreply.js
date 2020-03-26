@@ -16,7 +16,7 @@ const Noreply = props => {
               renderItem = {item => (
                 <List.Item>
                   <Link
-                    as = {`/article/${item._id}`}
+                    as = {`/articles/article/${item._id}`}
                     href={{pathname: '/articles/article', query: {id: item._id}}}
                   >
                     <span className = 'title'>{item.title}</span>

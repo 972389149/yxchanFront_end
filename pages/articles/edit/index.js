@@ -55,11 +55,6 @@ const Edit = props => {
         message.success('编辑成功！');
         loading_(false);
         hasEdit_(true);
-        setTimeout(() => {
-          Router.push({
-            pathname: '/articles/article/' + props.id,
-          })
-        }, 1000)
     }).catch(err => {
       message.error(err.msg);
       loading_(false);
