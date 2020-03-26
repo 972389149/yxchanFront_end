@@ -13,13 +13,13 @@ const AcntMessage = props => {
         <div className = 'haslogin_detail'>
           <div className = 'avatar'>
             <Link
-              // as = {`/acnts/acnt/${props.acntName}`}
+              as = {`/acnts/acnt/${props.acntName}`}
               href={{pathname: '/acnts/acnt', query: {user: props.acntName}}}
             >
               <Avatar size = 'large' shape = 'square' src = {url + props.acntAvatar} alt = {props.acntName}/>
             </Link>
             <Link
-              // as = {`/acnts/acnt/${props.acntName}`}
+              as = {`/acnts/acnt/${props.acntName}`}
               href={{pathname: '/acnts/acnt', query: {user: props.acntName}}}
             >
               <a className = 'avatarName'>{props.acntName}</a>

@@ -20,7 +20,7 @@ const Scorerank = props => {
                 <List.Item.Meta
                   avatar = {
                     <Link
-                      // as = {`/acnts/acnt/${item.acntName}`}
+                      as = {`/acnts/acnt/${item.acntName}`}
                       href={{pathname: '/acnts/acnt', query: {user: item.acntName}}}
                     >
                       <Avatar src = { url + item.acntAvatar} />
@@ -28,7 +28,7 @@ const Scorerank = props => {
                   }
                   title = {
                     <Link
-                      // as = {`/acnts/acnt/${item.acntName}`}
+                      as = {`/acnts/acnt/${item.acntName}`}
                       href={{pathname: '/acnts/acnt', query: {user: item.acntName}}}
                     >
                       <a>{item.acntName}</a>

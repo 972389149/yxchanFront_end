@@ -43,7 +43,7 @@ const Message = props => {
         <span >
           &nbsp;你的&nbsp;
           <Link
-            // as = {`/articles/article/${item.articleId}`}
+            as = {`/articles/article/${item.articleId}`}
             href={{pathname: '/articles/article' + item.articleId}}
           >
             <a>{item.title}</a>
@@ -56,7 +56,7 @@ const Message = props => {
         <span >
           &nbsp;你的&nbsp;
           <Link
-            // as = {`/articles/article/${item.articleId}`}
+            as = {`/articles/article/${item.articleId}`}
             href={{pathname: '/articles/article', query: {id: item.articleId}}}>
             <a>{item.title}</a>
           </Link>
@@ -68,7 +68,7 @@ const Message = props => {
         <span >
           &nbsp;你的&nbsp;
           <Link
-            // as = {`/articles/article/${item.articleId}`}
+            as = {`/articles/article/${item.articleId}`}
             href={{pathname: '/articles/article/' + item.articleId}}
           >
             <a>{item.title}</a>
@@ -81,7 +81,7 @@ const Message = props => {
         <span >
           &nbsp;你在&nbsp;
           <Link
-            // as = {`/articles/article/${item.articleId}`}
+            as = {`/articles/article/${item.articleId}`}
             href={{pathname: '/articles/article/' + item.articleId}}
           >
             <a>{item.title}</a>
@@ -94,7 +94,7 @@ const Message = props => {
         <span >
           &nbsp;你收藏的&nbsp;
           <Link
-            // as = {`/articles/article/${item.articleId}`}
+            as = {`/articles/article/${item.articleId}`}
             href={{pathname: '/articles/article/' + item.articleId}}
           >
             <a>{item.title}</a>
@@ -107,7 +107,7 @@ const Message = props => {
         <span >
           &nbsp;你收藏的&nbsp;
           <Link
-            // as = {`/articles/article/${item.articleId}`}
+            as = {`/articles/article/${item.articleId}`}
             href={{pathname: '/articles/article/' + item.articleId}}
           >
             <a>{item.title}</a>

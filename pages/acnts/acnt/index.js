@@ -131,7 +131,7 @@ const Acnt = props => {
                     <List.Item>
                       <div className = {Style.articleItem}>
                         <Link
-                          // as = {`/acnts/acnt/${item.author.acntName}`}
+                          as = {`/acnts/acnt/${item.author.acntName}`}
                           href = {{pathname: '/acnts/acnt', query: { user: item.author.acntName}}}
                         >
                           <Avatar 
@@ -145,7 +145,7 @@ const Acnt = props => {
                         <Tag color = '#87d068'> {articleType(item.type)} </Tag>
                         <span className = {Style.item_title} >
                           <Link
-                            // as = {`/articles/article/${item._id}`}
+                            as = {`/articles/article/${item._id}`}
                             href={{pathname: '/articles/article', query: {id: item._id}}}>
                             <a>{item.title}</a>
                           </Link>

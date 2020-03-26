@@ -359,7 +359,16 @@ const Article = props => {
                     <Comment
                       actions = {item.actions}
                       author = {item.acntName}
-                      avatar = {item.acntAvatar}
+                      avatar = {
+                        <Avatar
+                          src = {item.acntAvatar}
+                          onClick = { () => {
+                            Router.push({
+                              pathname: '/acnts/acnt/' + item.acntName,
+                            })
+                          }}
+                        />
+                      }
                       content = {item.comment}
                       datetime = {item.commentTime}
                     />
