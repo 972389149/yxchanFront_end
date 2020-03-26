@@ -22,6 +22,8 @@ const Create = props => {
   
   const [topics, topics_] = useState([]);
   const [article, article_] = useState({});
+  const [hasPub, hasPub_] = useState(false);
+
   useEffect(() => {
     FetchGet(`topic/getAllTopics`, {})
       .then(val => {
@@ -42,8 +44,6 @@ const Create = props => {
       });
   }, [])
 
-  const [hasPub, hasPub_] = useState(false);
-
   // 类型选择
   const handleChange = val => {
     article_({
@@ -60,6 +60,7 @@ const Create = props => {
   }
 
   const [loading, loading_] = useState(false);
+  const [articleId, articleId_] = useState(0);
   // 发布文章
   const submit = () => {
     const check = [article.title, article.description, article.content]
@@ -72,8 +73,8 @@ const Create = props => {
     .then(val => {
       loading_(false);
       hasPub_(true);
+      articleId_(val.data.articleId)
     }).catch(err => {
-      message.error(err);
       loading_(false)
     })
   }
@@ -186,6 +187,21 @@ const Create = props => {
           <Result
             status = "success"
             title = "文章发布成功!"
+            extra = {[
+              <Button
+                type = "primary"
+                key = 'look'
+                onClick = {
+                  () => {
+                    Router.push({
+                      pathname: '/articles/article/' + articleId,
+                    })
+                  }
+                }
+              >
+                去看看
+              </Button>,
+            ]}
           />
         </section>
       }

@@ -83,7 +83,6 @@ const Index = props => {
     })
     return result;
   }
-  // nemetric.endPaint('AppAfterPaint');
   return (
     <div className = {Style.index_inner}>
       <section className = {Style.article_list}>
@@ -164,6 +163,7 @@ const Index = props => {
           }
           <Pagination 
             defaultCurrent = {parseInt(props.pageIndex)}
+            pageSize = {parseInt(pageSize)}
             total = { parseInt(props.total) } 
             hideOnSinglePage = {false}
             onChange = {pageChange}

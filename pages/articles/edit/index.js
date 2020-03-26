@@ -35,6 +35,7 @@ const Edit = props => {
 
 
   const [loading, loading_] = useState(false);
+  const [articleId, articleId_] = useState(0);
   // 编辑文章
   const submit = () => {
     const check = [article.description, article.content];
@@ -55,8 +56,8 @@ const Edit = props => {
         message.success('编辑成功！');
         loading_(false);
         hasEdit_(true);
+        articleId_(val.data.id);
     }).catch(err => {
-      message.error(err.msg);
       loading_(false);
     })
   }
@@ -152,6 +153,21 @@ const Edit = props => {
           <Result
             status = "success"
             title = "编辑成功!"
+            extra = {[
+              <Button
+                type = "primary"
+                key = 'look'
+                onClick = {
+                  () => {
+                    Router.push({
+                      pathname: '/articles/article/' + articleId,
+                    })
+                  }
+                }
+              >
+                去看看
+              </Button>,
+            ]}
           />
         </section>
       }
