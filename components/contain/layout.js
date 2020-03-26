@@ -27,7 +27,6 @@ const tab = [
 ]
 
 const Layout = props => {
-
   const [isNet, isNet_] = useState(true);
   /* 判断网络状态 */
   useEffect(() => {

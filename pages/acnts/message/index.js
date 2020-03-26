@@ -42,7 +42,10 @@ const Message = props => {
       return (
         <span >
           &nbsp;你的&nbsp;
-          <Link as = {`/articles/article/${item.articleId}`} href={{pathname: '/articles/article' + item.articleId}}>
+          <Link
+            // as = {`/articles/article/${item.articleId}`}
+            href={{pathname: '/articles/article' + item.articleId}}
+          >
             <a>{item.title}</a>
           </Link>
           &nbsp;收到新的评论
@@ -52,7 +55,9 @@ const Message = props => {
       return (
         <span >
           &nbsp;你的&nbsp;
-          <Link as = {`/articles/article/${item.articleId}`} href={{pathname: '/articles/article', query: {id: item.articleId}}}>
+          <Link
+            // as = {`/articles/article/${item.articleId}`}
+            href={{pathname: '/articles/article', query: {id: item.articleId}}}>
             <a>{item.title}</a>
           </Link>
           &nbsp;收获一个赞
@@ -62,7 +67,10 @@ const Message = props => {
       return (
         <span >
           &nbsp;你的&nbsp;
-          <Link as = {`/articles/article/${item.articleId}`} href={{pathname: '/articles/article/' + item.articleId}}>
+          <Link
+            // as = {`/articles/article/${item.articleId}`}
+            href={{pathname: '/articles/article/' + item.articleId}}
+          >
             <a>{item.title}</a>
           </Link>
           &nbsp;被其他用户收藏了
@@ -72,7 +80,10 @@ const Message = props => {
       return (
         <span >
           &nbsp;你在&nbsp;
-          <Link as = {`/articles/article/${item.articleId}`} href={{pathname: '/articles/article/' + item.articleId}}>
+          <Link
+            // as = {`/articles/article/${item.articleId}`}
+            href={{pathname: '/articles/article/' + item.articleId}}
+          >
             <a>{item.title}</a>
           </Link>
           &nbsp;中的评论被点赞了
@@ -82,7 +93,10 @@ const Message = props => {
       return (
         <span >
           &nbsp;你收藏的&nbsp;
-          <Link as = {`/articles/article/${item.articleId}`} href={{pathname: '/articles/article/' + item.articleId}}>
+          <Link
+            // as = {`/articles/article/${item.articleId}`}
+            href={{pathname: '/articles/article/' + item.articleId}}
+          >
             <a>{item.title}</a>
           </Link>
           &nbsp;有新的动态
@@ -92,7 +106,10 @@ const Message = props => {
       return (
         <span >
           &nbsp;你收藏的&nbsp;
-          <Link as = {`/articles/article/${item.articleId}`} href={{pathname: '/articles/article/' + item.articleId}}>
+          <Link
+            // as = {`/articles/article/${item.articleId}`}
+            href={{pathname: '/articles/article/' + item.articleId}}
+          >
             <a>{item.title}</a>
           </Link>
           &nbsp;更新了

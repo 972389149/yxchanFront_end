@@ -130,7 +130,10 @@ const Acnt = props => {
                   renderItem = {item => (
                     <List.Item>
                       <div className = {Style.articleItem}>
-                        <Link as = {`/acnts/acnt/${item.author.acntName}`} href = {{pathname: '/acnts/acnt', query: { user: item.author.acntName}}}>
+                        <Link
+                          // as = {`/acnts/acnt/${item.author.acntName}`}
+                          href = {{pathname: '/acnts/acnt', query: { user: item.author.acntName}}}
+                        >
                           <Avatar 
                             shape = 'square' size = 'small' src = {url + item.author.acntAvatar} alt = {item.author.acntName} 
                           />
@@ -141,7 +144,9 @@ const Acnt = props => {
                         </span>
                         <Tag color = '#87d068'> {articleType(item.type)} </Tag>
                         <span className = {Style.item_title} >
-                          <Link as = {`/articles/article/${item._id}`} href={{pathname: '/articles/article', query: {id: item._id}}}>
+                          <Link
+                            // as = {`/articles/article/${item._id}`}
+                            href={{pathname: '/articles/article', query: {id: item._id}}}>
                             <a>{item.title}</a>
                           </Link>
                         </span>

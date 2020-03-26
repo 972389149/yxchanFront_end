@@ -138,12 +138,18 @@ const Index = props => {
                   >
                     <List.Item.Meta
                       avatar = {
-                        <Link as = {`/acnts/acnt/${item.author.acntName}`} href = {{pathname: '/acnts/acnt', query: { user: item.author.acntName}}}>
+                        <Link
+                          // as = {`/acnts/acnt/${item.author.acntName}`}
+                          href = {{pathname: '/acnts/acnt', query: { user: item.author.acntName}}}
+                        >
                           <Avatar src = {url + item.author.acntAvatar} />
                         </Link>
                       }
                       title = {
-                        <Link as = {`/articles/article/${item._id}`} href={{pathname: '/articles/acticle', query: { id: item._id}}}>
+                        <Link
+                          // as = {`/articles/article/${item._id}`}
+                          href={{pathname: '/articles/article', query: { id: item._id}}}
+                        >
                           <a>{item.title}</a>
                         </Link>
                       }

@@ -31,7 +31,6 @@ const Editor = ({ onChange, onSubmit, submitting, value }) => (
 );
 
 const Article = props => {
-
   const [hasCollect, hasCollect_] = useState(props.likeCollect.hasCollect);
   const [hasLike, hasLike_] = useState(props.likeCollect.hasLike);
   const [beLike, beLike_] = useState(props.detail.data.beLike);
