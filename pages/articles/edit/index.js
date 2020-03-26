@@ -15,7 +15,7 @@ import Markdown from './../../../components/hooks/markdown'
 const Editor_ = dynamic(import('./../../../components/hooks/editor'), {
   ssr: false
 })
-const list = ['精华', '分享', '问答', '招聘', '测试'];
+const list = ['博客', '分享', '问答', '招聘', '测试'];
 
 const Edit = props => {
 

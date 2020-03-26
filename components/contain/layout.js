@@ -127,7 +127,17 @@ const Layout = props => {
       <section className = 'public_header'>
           <div className = 'header_inner'>
             {
-              <img className = 'header_logo' src = '/images/logo_.svg'/>
+              <img
+                className = 'header_logo'
+                src = '/images/logo.png'
+                onClick = {
+                  () => {
+                    Router.push({
+                      pathname: '/',
+                    })
+                  }
+                }
+              />
             }
             <ul className = 'header_nav'>
               {
@@ -201,7 +211,6 @@ const Layout = props => {
           justify-content: space-between;
         }
         .header_logo {
-          width: 120px;
           height: 28px;
           cursor: pointer;
         }
@@ -259,9 +268,6 @@ const Layout = props => {
         .public_box {
           width: 100%;
           min-height: calc(100vh - 50px - 205px);
-          display: flex;
-          align-items: center;
-          justify-content: center;
         }
         .box_inner {
           width: 90%;

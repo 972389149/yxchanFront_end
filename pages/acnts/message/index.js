@@ -116,7 +116,7 @@ const Message = props => {
       <Authorized />
     )
   }
-
+ 
   return (
     <div className = {Style.message_inner}>
       <section className = {Style.message_info_1}>

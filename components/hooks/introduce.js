@@ -18,7 +18,7 @@ const Introduce = props => {
   return (
     <React.Fragment>
       <div className = 'nologin'>
-        <div>Yxc：JavaScript专业中文社区</div>
+        <div>JavaScript业余中文社区</div>
         <div className = 'nologin_btn'>
           <p>您想要</p>
           <Button onClick = {login_showModal}>登录</Button>
