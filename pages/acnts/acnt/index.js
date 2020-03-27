@@ -29,7 +29,7 @@ const Acnt = props => {
   const articleType = type => {
     switch(type) {
       case 1:
-        return '精华';
+        return '博客';
       case 2:
         return '分享';
       case 3:
