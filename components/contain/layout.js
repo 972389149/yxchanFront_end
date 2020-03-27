@@ -118,7 +118,7 @@ const Layout = props => {
   }
 
   useEffect(() => {
-    let special = ['Connet(Acnt)', 'Connet(Index)', 'Connet(Article)'];
+    let special = ['Connect(Acnt)', 'Connect(Index)', 'Connect(Article)'];
     if (special.indexOf(props.Component.displayName) === -1) return;
     perf()
       .then(val => {
