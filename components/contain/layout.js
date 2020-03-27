@@ -11,7 +11,6 @@ import { bindActionCreators } from 'redux'
 import { FetchPost, FetchGet } from './../../tools'
 import { loginout, check } from './../../redux/actions'
 import Error_ from './../hooks/error'
-import perf from './performance'
 
 const tab = [
   {
@@ -116,19 +115,6 @@ const Layout = props => {
     }
     Router.push(`${navItem.router}`);
   }
-
-  useEffect(() => {
-    let special = ['Connect(Acnt)', 'Connect(Index)', 'Connect(Article)'];
-    if (special.indexOf(props.Component.displayName) === -1) return;
-    perf()
-      .then(val => {
-        let pages = props.Component.displayName.split('(')[1].split(')')[0];
-        FetchGet('other/pref', {
-          page: pages,
-          data: val,
-        })
-      })
-  })
 
   const { Component, pageProps } = props;
   return (

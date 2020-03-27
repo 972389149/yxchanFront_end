@@ -110,7 +110,7 @@ const Message = props => {
       )
     }
   }  
-  
+
   if (props.acnt.status !== 1) {
     return (
       <Authorized />

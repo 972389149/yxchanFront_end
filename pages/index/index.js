@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Router from 'next/router'
 import { connect } from 'react-redux'
 import Link from 'next/link'
@@ -21,6 +21,7 @@ import Noreply from './../../components/hooks/noreply'
 import Scorerank from './../../components/hooks/scoreRank'
 import Community from './../../components/hooks/community'
 import Introduce from './../../components/hooks/introduce'
+import perf from './../../components/contain/performance'
 
 const IconText = ({ type, text }) => {
   switch(type) {
@@ -82,6 +83,16 @@ const Index = props => {
     })
     return result;
   }
+
+  useEffect(() => {
+    perf()
+      .then(val => {
+        FetchGet('other/pref', {
+          page: 'Index',
+          data: val,
+        })
+      })
+  }, [])
 
   return (
     <div className = {Style.index_inner}>

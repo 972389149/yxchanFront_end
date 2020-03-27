@@ -16,6 +16,7 @@ import { getYMDHMS, FetchPost, FetchGet } from './../../../tools'
 import AcntMessage from './../../../components/hooks/acntMessage'
 import Noreply from './../../../components/hooks/noreply'
 import Community from './../../../components/hooks/community'
+import perf from './../../../components/contain/performance'
 
 const Editor = ({ onChange, onSubmit, submitting, value }) => (
   <div>
@@ -293,6 +294,16 @@ const Article = props => {
   const handleChange = e => {
     value_(e.target.value);
   };
+
+  useEffect(() => {
+    perf()
+      .then(val => {
+        FetchGet('other/pref', {
+          page: 'Article',
+          data: val,
+        })
+      })
+  }, [])
 
   return (
     <div className = {Style.article_inner}>

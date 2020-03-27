@@ -16,6 +16,7 @@ import { FetchGet, FetchPost } from './../../../tools'
 import AcntMessage from './../../../components/hooks/acntMessage'
 import Community from './../../../components/hooks/community'
 import Hookheader from './../../../components/contain/hookheader'
+import perf from './../../../components/contain/performance'
 
 const Acnt = props => {
   const [data, data_] = useState([props.data.record.createList, props.data.record.collectList, props.data.record.involeList])
@@ -39,6 +40,16 @@ const Acnt = props => {
         return '测试';
     }
   }
+
+  useEffect(() => {
+    perf()
+      .then(val => {
+        FetchGet('other/pref', {
+          page: 'Acnt',
+          data: val,
+        })
+      })
+  }, [])
 
   return (
     <div  className = {Style.acnt_inner}>
