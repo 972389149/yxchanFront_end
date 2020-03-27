@@ -11,6 +11,7 @@ import { bindActionCreators } from 'redux'
 import { FetchPost, FetchGet } from './../../tools'
 import { loginout, check } from './../../redux/actions'
 import Error_ from './../hooks/error'
+import perf from './performance'
 
 const tab = [
   {
@@ -116,8 +117,20 @@ const Layout = props => {
     Router.push(`${navItem.router}`);
   }
 
-  const { Component, pageProps, store } = props;
-  const specialComp = ['Connect(Setting)', 'Connect(Message)', 'Connect(Create)'];
+  useEffect(() => {
+    let special = ['Connet(Acnt)', 'Connet(Index)', 'Connet(Article)'];
+    if (special.indexOf(props.Component.displayName) === -1) return;
+    perf()
+      .then(val => {
+        let pages = props.Component.displayName.split('(')[1].split(')')[0];
+        FetchGet('other/pref', {
+          page: pages,
+          data: val,
+        })
+      })
+  })
+
+  const { Component, pageProps } = props;
   return (
     <React.Fragment>
       <Head>

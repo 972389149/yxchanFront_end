@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Router from 'next/router'
 import { connect } from 'react-redux'
 import Link from 'next/link'
@@ -9,7 +9,6 @@ import {
   StarOutlined,
   MessageOutlined
 } from '@ant-design/icons'
-// import Nemetric from 'nemetric'
 
 import { getYMDHMS } from './../../tools'
 import Style from './Index.module.scss'
@@ -83,6 +82,7 @@ const Index = props => {
     })
     return result;
   }
+
   return (
     <div className = {Style.index_inner}>
       <section className = {Style.article_list}>
